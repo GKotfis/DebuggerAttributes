@@ -2,12 +2,15 @@
 
 namespace External.Sdk
 {
-    [DebuggerDisplay("Id: {Id, nq}, Name: {Name, nq}, Address assigned: {Address != null}")]
+    [DebuggerDisplay("{DebuggerDisplay}")]
     public class Person
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
+
+        public string DebuggerDisplay
+            => $"Id: {Id}, Name: {Name}, Address assigned: {Address != null}";
     }
 
     public class Address
